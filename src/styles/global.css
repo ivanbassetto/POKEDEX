@@ -1,3 +1,10 @@
+
+/* Importação no global.css */
+
+/* @import './responsive.css'; */
+
+
+
 :root {
     /* Cores do Style Guide */
     --primary-color: #dc0a2d; /* Identidade (vermelho do cabeçalho) */
@@ -54,24 +61,28 @@
     font-size: var(--font-size-base);
     background-color: var(--background-color);
     color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
   }
   
   .app {
-    width: 360px;
-    height: 640px;
     background-color: var(--primary-color);
-    padding: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 8px;
+    box-shadow: var(--shadow-heavy);
   }
+  
 
   .home-screen {
-    width: 100%;
+    width: 360;
+    height: 640;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 4px;
     gap: var(--spacing-unit);
   }
   
@@ -82,6 +93,22 @@
     text-align: center;
     border-radius: 0 0 8px 8px;
   }
+
+
+  .pokemon-container {
+    width: 352px;
+    height: 524px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 8px;
+    border-radius: 8px;
+    padding-top: 24px;
+    padding-right: 12px;
+    padding-left: 12px;
+    background: var(--card-background);
+    box-shadow: 0px 1px 3px 1px #00000040 inset;
+  }
+  
   
   .pokemon-card {
   background-color: var(--card-background);

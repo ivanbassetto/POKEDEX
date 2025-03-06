@@ -1,0 +1,10 @@
+
+
+/* Dispositivos grandes (tablets e desktops pequenos) */
+@media (min-height: 768px) {
+  .app {
+    max-width: 360px;;
+    max-height: 640px;
+  }
+}
+
