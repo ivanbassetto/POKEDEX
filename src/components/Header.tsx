@@ -1,8 +1,14 @@
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <h1>Pokédex</h1>
-      {/* Adicionaremos o botão "Sort by" mais tarde */}
+      <div className="partA_header">
+        <img src="/diversos/Pokeball.png" alt="" />
+        <h1>Pokédex</h1>
+      </div>
+      <div className="partB_header">      
+        <input type="text" />
+        <img src="" alt="" />
+      </div>
     </header>
   );
 };
