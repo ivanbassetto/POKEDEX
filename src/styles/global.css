@@ -156,8 +156,10 @@ vertical-align: middle;
     color: #DC0A2D; /* Define a cor da lupa */
   }
 
+
   .circle {
-    width: 35px;
+    cursor: pointer;
+    width: 32px;
     height: 32px;
     padding: 8px; 
     border-radius: 16px;
@@ -167,10 +169,44 @@ vertical-align: middle;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--primary-color);
     box-sizing: border-box; /* Faz o padding não aumentar o tamanho total */
 }
 
+.back_sort_header {
+ 
+  width: 16px; /* Ajuste a largura para um tamanho adequado */
+  height: 16px; /* Ajuste a altura para um tamanho adequado */
+}
+
+.back_sort_header span {
+  margin-top: 0.5px;
+  margin-left: 0.5px;
+  font-size: 16px;
+  color: #DC0A2D;
+}
+
+.dropdown-box {
+  z-index: 2;
+  width: 113px;
+  height: 132px;
+  position: absolute;
+  top: 125%; /* Ajuste conforme necessário */
+  right: 0;
+  border-radius: 12px;
+  border-left: 4px solid #DC0A2D;
+  padding: 4px;
+  background: #DC0A2D;
+  box-shadow: 0px 3px 12px 3px #00000033;
+  display: none; /* Para esconder por padrão */
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container .dropdown-box {
+  display: block; /* Apenas quando a lógica do React ativa */
+}
 
 
   .pokemon-container {
