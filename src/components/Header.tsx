@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import DropdownBox from './DropdownBox';  // Importando o novo componente
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,8 @@ const Header: React.FC = () => {
             <div className="back_sort_header">
               <span className="material-symbols-rounded">text_format</span>
             </div>
-          </Button>
-          {isOpen && (
-            <div className="dropdown-box">
-              {/* Conteúdo da dropdown */}
-            </div>
-          )}
+            </Button>
+            <DropdownBox isOpen={isOpen} />
         </div>
       </div>
     </header>
