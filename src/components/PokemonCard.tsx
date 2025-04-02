@@ -1,12 +1,21 @@
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
+
 interface PokemonCardProps {
-  number: string; // Alterar de number para string
+  number: string;
   name: string;
   image: string;
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ name, image, number }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/pokemon/${number}`); // Navega para a tela de detalhes
+  };
+
   return (
-    <div className="pokemon_card">
+    <Button onClick={handleClick} className="pokemon_card">
       <div className="number_card">
         <span>#{number}</span>
       </div>
@@ -14,7 +23,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ name, image, number }) => {
       <div className="pokemon_card_footer">
         <h3>{name}</h3>
       </div>
-    </div>
+    </Button>
   );
 };
 

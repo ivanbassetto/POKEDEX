@@ -1,9 +1,15 @@
-
-import HomeScreen from './screens/HomeScreen'; // Importa a tela inicial da Pokédex
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen"; 
+import PokemonDetailScreen from "./screens/PokemonDetailScreen";
 
 function App() {
   return (
-      <HomeScreen />
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/pokemon/:number" element={<PokemonDetailScreen />} />
+      </Routes>
+    </Router>
   );
 }
 
