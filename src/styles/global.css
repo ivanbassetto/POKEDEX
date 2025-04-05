@@ -163,6 +163,8 @@ vertical-align: middle;
   }
 
 
+
+
   .circle {
     cursor: pointer;
     width: 32px;
@@ -472,14 +474,11 @@ margin: 0; /* Remove qualquer margem adicional */
     justify-content: center;
   }
 
-  .pokemon_detail_screen h3 {
-    display: none;
-  }
+
 
   .img_pokeball_detail img {
     width: 205.89px;
     height: 208px;
     left: 1.05px;
-
   }
   
