@@ -15,13 +15,10 @@ const HomeScreen: React.FC = () => {
   const filteredPokemons = pokemons.filter((pokemon) => {
     const search = searchTerm.toLowerCase();
     const searchTermWithHash = `#${pokemon.number}`.toLowerCase();
-  
-    // Verificar se o nome começa com a sequência do termo de pesquisa
     return (
       pokemon.name.toLowerCase().startsWith(search) || searchTermWithHash.startsWith(search)
     );
   });
-  
 
   const sortedPokemons = [...filteredPokemons].sort((a, b) => {
     if (selectedOption === "Number") {
@@ -43,7 +40,14 @@ const HomeScreen: React.FC = () => {
       />
       <div className="pokemon-container">
         {sortedPokemons.map((pokemon) => (
-          <PokemonCard key={pokemon.number} number={pokemon.number} name={pokemon.name} image={pokemon.image} />
+          <PokemonCard
+            key={pokemon.number}
+            number={pokemon.number}
+            name={pokemon.name}
+            image={pokemon.image}
+            selectedOption={selectedOption}
+            pokemonList={sortedPokemons}
+          />
         ))}
       </div>
     </div>

@@ -1,7 +1,28 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import Button from "../components/Button";
+import Chevron from "../components/Chevron";
+import useFetchPokemons from "../hooks/useFetchPokemons";
 
 const PokemonDetailScreen = () => {
   const { number } = useParams();
+  const pokemonId = Number(number); // garante que vira número
+
+  const location = useLocation();
+  const { selectedOption, pokemonList } = location.state || { selectedOption: "Number", pokemonList: [] };
+
+  const pokemons = useFetchPokemons([pokemonId]);
+  const pokemon = pokemons[0]; // só vem 1, então pega direto
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/");
+  };
+
+  // Verifica a posição do Pokémon na lista
+  const currentIndex = pokemonList?.findIndex((p: any) => Number(p.number) === pokemonId);
+  const isFirst = currentIndex === 0;
+  const isLast = currentIndex === pokemonList?.length - 1;
 
   return (
     <div className="pokemon_detail_screen">
@@ -9,21 +30,29 @@ const PokemonDetailScreen = () => {
 {/* -------------------------------------------------------------------------------------------------- */}
         <div className="img_pokeball_detail"><img src="/diversos/pokeball_detail.png" alt="pokeball" /></div>
 {/* -------------------------------------------------------------------------------------------------- */}
-<div className="header_detail">
-  <div className="left_group_detail">
-    <div className="div_arrow_back">
-      <span className="material-symbols-rounded">arrow_back</span>
-    </div>
-    <h1>Pokemon</h1>
-  </div>
-  <span className="number_detail">#{number}</span>
-</div>
+
+
+  <div className="header_detail">
+        <div className="left_group_detail">
+        <Button onClick={handleBack} className="div_arrow_back">
+            <span className="material-symbols-rounded">arrow_back</span>
+          </Button>
+          <h1>{pokemon ? pokemon.name : "Carregando..."}</h1>
+        </div>
+        <span className="number_detail">#{number}</span>
+      </div>
 
 {/* -------------------------------------------------------------------------------------------------- */}
-                <div className="chevron_detail">
-                  <span className="material-symbols-rounded chevron_left_detail">chevron_left</span>
-                  <span className="material-symbols-rounded chevron_right_detail">chevron_right</span>
-                </div>
+
+<Chevron
+        isFirst={isFirst}
+        isLast={isLast}
+        pokemonList={pokemonList}
+        currentIndex={currentIndex}
+        selectedOption={selectedOption}
+      />
+
+
 {/* -------------------------------------------------------------------------------------------------- */}
                 
 {/* -------------------------------------------------------------------------------------------------- */}
@@ -103,8 +132,6 @@ const PokemonDetailScreen = () => {
     </div>
   ))}
 </div>
-
-
 
 
                  {/*DIV background_about */}

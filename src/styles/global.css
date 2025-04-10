@@ -507,6 +507,7 @@ padding-left: 20px;
   }
   
   .div_arrow_back {
+    cursor: pointer;
     width: 32px;
     height: 32px;
     display: flex;
@@ -560,10 +561,17 @@ vertical-align: middle;
   }
   
   /* Ícones absolutos nos cantos inferiores */
-  .chevron_detail span {
+  .chevron_detail button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+  
     position: absolute;
-    bottom: 16px;      /* distância do fundo */
-    font-size: 24px;   /* ajustável conforme tamanho do ícone */
+    bottom: 16px;
+    font-size: 24px;
     color: white;
     font-weight: 200;
     filter: drop-shadow(0px 1px 3px #00000033);
@@ -572,7 +580,9 @@ vertical-align: middle;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
+  
   
   /* Posicionamento lateral */
   .chevron_left_detail {

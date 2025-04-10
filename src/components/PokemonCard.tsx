@@ -1,17 +1,36 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
-interface PokemonCardProps {
+interface Pokemon {
   number: string;
   name: string;
   image: string;
 }
 
-const PokemonCard: React.FC<PokemonCardProps> = ({ name, image, number }) => {
+interface PokemonCardProps {
+  number: string;
+  name: string;
+  image: string;
+  selectedOption: 'Number' | 'Name';
+  pokemonList: Pokemon[];
+}
+
+const PokemonCard: React.FC<PokemonCardProps> = ({
+  name,
+  image,
+  number,
+  selectedOption,
+  pokemonList,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/pokemon/${number}`); // Navega para a tela de detalhes
+    navigate(`/pokemon/${number}`, {
+      state: {
+        selectedOption,
+        pokemonList,
+      },
+    });
   };
 
   return (
