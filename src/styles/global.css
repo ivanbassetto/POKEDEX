@@ -123,7 +123,7 @@ vertical-align: middle;
     color: white;
   }
 
-  .input-container {
+  .input_container {
     position: relative;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ vertical-align: middle;
     max-width: 280px;
   }
   
-  .input-container input {
+  .input_container input {
     width: 100%;
     max-width: 280px;
     height: auto;
@@ -145,7 +145,7 @@ vertical-align: middle;
     outline: none;
   }
   
-  .input-container ::placeholder {
+  .input_container ::placeholder {
     font-family: var(--font-prin);
     font-weight: 400;
     font-size: 10px;
@@ -154,7 +154,7 @@ vertical-align: middle;
     vertical-align: middle;
   }
   
-  .search-icon {
+  .search_icon {
     position: absolute;
     margin-top: 3px;
     left: 10px; /* Define a posição do ícone */
@@ -163,6 +163,24 @@ vertical-align: middle;
   }
 
 
+  .input_close {
+    position: absolute;
+    right: 0px;
+    width: 36px;
+height: 32px;
+gap: 8px;
+padding-top: 8px;
+padding-right: 12px;
+padding-bottom: 8px;
+padding-left: 8px;
+box-sizing: border-box;
+  }
+
+  .close_icon {
+    font-size: 18px;
+    font-weight: 300;
+    color: #DC0A2D;
+  }
 
 
   .circle {

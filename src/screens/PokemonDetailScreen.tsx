@@ -16,8 +16,13 @@ const PokemonDetailScreen = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/");
-  };
+  navigate("/", {
+    state: {
+      selectedOption,
+      pokemonList,
+    },
+  });
+};
 
   // Verifica a posição do Pokémon na lista
   const currentIndex = pokemonList?.findIndex((p: any) => Number(p.number) === pokemonId);

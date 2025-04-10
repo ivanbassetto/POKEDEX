@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import PokemonCard from "../components/PokemonCard";
 import Header from "../components/Header";
 import useFetchPokemons from "../hooks/useFetchPokemons";
@@ -6,20 +7,32 @@ import useFetchPokemons from "../hooks/useFetchPokemons";
 const pokemonIds = [1, 4, 7, 304, 25, 12, 132, 92, 151];
 
 const HomeScreen: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const initialSelectedOption = location.state?.selectedOption || "Number";
+  const [selectedOption, setSelectedOption] = useState<"Number" | "Name">(initialSelectedOption);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<"Number" | "Name">("Number");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const pokemons = useFetchPokemons(pokemonIds);
 
+  // Atualiza o state da rota ao trocar o selectedOption
+  useEffect(() => {
+    navigate("/", { state: { selectedOption }, replace: true });
+  }, [selectedOption, navigate]);
+
+  // Filtro por nome, número com # ou número sem #
   const filteredPokemons = pokemons.filter((pokemon) => {
     const search = searchTerm.toLowerCase();
-    const searchTermWithHash = `#${pokemon.number}`.toLowerCase();
-    return (
-      pokemon.name.toLowerCase().startsWith(search) || searchTermWithHash.startsWith(search)
-    );
+    const nameMatch = pokemon.name.toLowerCase().startsWith(search);
+    const numberWithHash = `#${pokemon.number}`.toLowerCase();
+    const numberWithoutHash = `${pokemon.number}`.toLowerCase();
+
+    return nameMatch || numberWithHash.startsWith(search) || numberWithoutHash.startsWith(search);
   });
 
+  // Ordenação por número ou nome
   const sortedPokemons = [...filteredPokemons].sort((a, b) => {
     if (selectedOption === "Number") {
       return parseInt(a.number) - parseInt(b.number);

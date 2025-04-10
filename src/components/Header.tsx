@@ -26,14 +26,17 @@ const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="partB_header">
-        <div className="input-container">
-          <span className="material-symbols-rounded search-icon">search</span>
+        <div className="input_container">
+          <span className="material-symbols-rounded search_icon">search</span>
           <input
             type="text"
             placeholder="Search"
             value={searchTerm} // Definir o valor como searchTerm
             onChange={(e) => setSearchTerm(e.target.value)} // Atualizar searchTerm
           />
+          <div className="input_close">
+            <span className="material-symbols-rounded close_icon">close</span>
+          </div>
         </div>
         <div className="dropdown-container">
           <Button className="circle" onClick={() => setIsOpen(!isOpen)}>
