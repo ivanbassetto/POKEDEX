@@ -120,26 +120,29 @@ const PokemonDetailScreen = () => {
   <div className="divider_attribute"></div>
 
   <div className="div_attribute">
-  <div
-    className={`text_header_attribute3 ${
-      pokemon.abilities.length === 1 ? "one-line" : ""
-    }`}
-  >
+  <div className="text_header_attribute3_wrapper">
     {pokemon?.abilities?.length > 0 ? (
-      pokemon.abilities.map((ability, index) => (
-        <div key={index}>
-          {ability
-            .split("-")
-            .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-            .join("-")}
-        </div>
-      ))
+      <div
+        className={`text_header_attribute3 ${
+          pokemon.abilities.length === 1 ? "one-line" : ""
+        }`}
+      >
+        {pokemon.abilities.map((ability, index) => (
+          <div key={index}>
+            {ability
+              .split("-")
+              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+              .join("-")}
+          </div>
+        ))}
+      </div>
     ) : (
-      <span>Carregando...</span>
+      <span className="text_header_attribute3">Carregando...</span>
     )}
   </div>
   <h3>Abilities</h3>
 </div>
+
 
 
 </div>
