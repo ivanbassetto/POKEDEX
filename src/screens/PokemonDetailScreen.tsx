@@ -2,6 +2,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import Chevron from "../components/Chevron";
 import useFetchPokemons from "../hooks/useFetchPokemons";
+import PokemonTypeBadge from "../components/PokemonTypeBadge";
 
 const PokemonDetailScreen = () => {
   const { number } = useParams();
@@ -66,48 +67,83 @@ const PokemonDetailScreen = () => {
                 <div className="background_about">
 
                 <div className="img_poke_detail">
-                 
-                </div>
+  {pokemon?.image && (
+    <img src={pokemon.image} alt={pokemon.name} className="poke_image_detail" />
+  )}
+</div>
 
-                  <div className="badge_about">
-                    <span>BADGES</span>
-                  </div>
+
+<div className="badge_about">
+  <div className="badge_wrapper">
+    {pokemon?.types?.length > 0 ? (
+      pokemon.types.map((type: string) => (
+        <PokemonTypeBadge key={type} type={type} />
+      ))
+    ) : (
+      <span className="text_loading_badges">Carregando tipos...</span>
+    )}
+  </div>
+</div>
+
+
 
                   <h2 className="h2_about">About</h2>
 
                   <div className="attribute_about">
 
-                    <div className="div_attribute">
-                        <div className="header1_div_attribute">
-                          <div className="symbol_attribute">
-                            <span className="material-symbols-rounded weight_attribute">weight</span>
-                          </div>
-                          <span className="text_header_attribute">api kg</span>
-                        </div>
-                        <h3>Weight</h3>         
-                    </div>
+  <div className="div_attribute">
+    <div className="header1_div_attribute">
+      <div className="symbol_attribute">
+        <span className="material-symbols-rounded weight_attribute">weight</span>
+      </div>
+      <span className="text_header_attribute">
+        {pokemon?.weight ? `${pokemon.weight / 10} kg` : "Carregando..."}
+      </span>
+    </div>
+    <h3>Weight</h3>         
+  </div>
 
-                    <div className="divider_attribute"></div>
+  <div className="divider_attribute"></div>
 
-                    <div className="div_attribute">
-                        <div className="header2_div_attribute">
-                          <div className="symbol_attribute">
-                            <span className="material-symbols-rounded straighten_attribute">straighten</span>
-                          </div>
-                          <span className="text_header_attribute">api m</span>
-                        </div>
-                        <h3>Height</h3>         
-                    </div>
+  <div className="div_attribute">
+    <div className="header2_div_attribute">
+      <div className="symbol_attribute">
+        <span className="material-symbols-rounded straighten_attribute">straighten</span>
+      </div>
+      <span className="text_header_attribute">
+        {pokemon?.height ? `${pokemon.height / 10} m` : "Carregando..."}
+      </span>
+    </div>
+    <h3>Height</h3>         
+  </div>
 
-                    <div className="divider_attribute"></div>
+  <div className="divider_attribute"></div>
 
-                    <div className="div_attribute">
-                          <span className="text_header_attribute3">api moves</span>
-                        <h3>Moves</h3>         
-                    </div>
+  <div className="div_attribute">
+  <div
+    className={`text_header_attribute3 ${
+      pokemon.abilities.length === 1 ? "one-line" : ""
+    }`}
+  >
+    {pokemon?.abilities?.length > 0 ? (
+      pokemon.abilities.map((ability, index) => (
+        <div key={index}>
+          {ability
+            .split("-")
+            .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+            .join("-")}
+        </div>
+      ))
+    ) : (
+      <span>Carregando...</span>
+    )}
+  </div>
+  <h3>Abilities</h3>
+</div>
 
-                    {/*DIV attribute_about */}
-                  </div>
+
+</div>
+
 
                   <h3 className="text_about">Lorem ipsum, dolor sit amet consectetur adipisicing elit.dsdsdsasaddsa</h3>
 
