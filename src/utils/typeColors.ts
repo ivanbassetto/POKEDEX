@@ -16,7 +16,7 @@ const typeColors: Record<string, string> = {
     psychic: "#FB5584",
     ice: "#9AD6DF",
     dragon: "#7037FF",
-    dark: "#7037FFh",
+    dark: "#7037FF",
     fairy: "#E69EAC",
   };
   

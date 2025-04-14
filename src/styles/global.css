@@ -636,7 +636,7 @@ vertical-align: middle;
   width: 200px;
   height: 200px;
   position: absolute;
-  top: -150px; /* sobe a imagem */
+  top: -140px; /* sobe a imagem */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -731,6 +731,7 @@ color: #74CB48;
 
 
 .symbol_attribute {
+  margin-bottom: 1px;
   width: 16px;
   height: 16px;
 }
@@ -785,7 +786,6 @@ background-color: #E0E0E0;
 
 
 .text_about {
-  background-color: #7038f8;
   width: 312px;
   height: 60px;
   display: flex;
@@ -857,7 +857,7 @@ background-color: #E0E0E0;
   position: absolute;
   width: 100%;
   height: 4px;
-  background-color: #74CB48;
+  background-color: var(--main-color);
   opacity: 0.2;
   border-radius: 4px;
 }
@@ -866,7 +866,7 @@ background-color: #E0E0E0;
   position: relative;
   z-index: 1;
   height: 4px;
-  background-color: #74CB48;
+  background-color: var(--main-color);
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
