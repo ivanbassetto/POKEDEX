@@ -42,7 +42,7 @@ const HomeScreen: React.FC = () => {
   });
 
   return (
-    <div className="home-screen">
+    <div className="home_screen">
       <Header
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -51,7 +51,7 @@ const HomeScreen: React.FC = () => {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <div className="pokemon-container">
+      <div className="pokemon_container">
         {sortedPokemons.map((pokemon) => (
           <PokemonCard
             key={pokemon.number}

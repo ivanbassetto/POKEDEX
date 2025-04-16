@@ -25,47 +25,48 @@ const Header: React.FC<HeaderProps> = ({
         <h1>Pokédex</h1>
       </div>
 
-      <div className="partB_header">
-      <div className="input_container">
-  <span className="material-symbols-rounded search_icon">search</span>
-  <input
-    type="text"
-    placeholder="Search"
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-  />
-  {searchTerm && (
-    <div className="input_close" onClick={() => setSearchTerm('')}>
-      <span className="material-symbols-rounded close_icon">close</span>
-    </div>
-  )}
-</div>
+    <div className="partB_header">
+          <div className="input_container">
+                <span className="material-symbols-rounded search_icon">search</span>
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                <div
+                  className={`input_close ${searchTerm ? 'active' : ''}`}
+                  onClick={() => setSearchTerm('')}
+                >
+                  <span className="material-symbols-rounded close_icon">close</span>
+                </div>
+          </div>
 
-        <div className="dropdown-container">
-          <Button className="circle" onClick={() => setIsOpen(!isOpen)}>
-            <div className="back_sort_header">
-              <span className="material-symbols-rounded">
-                {selectedOption === "Number" ? "numbers" : "text_format"}
-              </span>
+          <div className="dropdown-container">
+            <Button className="circle" onClick={() => setIsOpen(!isOpen)}>
+              <div className="back_sort_header">
+                <span className="material-symbols-rounded">
+                  {selectedOption === "Number" ? "numbers" : "text_format"}
+                </span>
+              </div>
+            </Button>
+
+            {/* Overlay para escurecer o fundo */}
+            {isOpen && (
+              <div
+                    className="overlay"
+                    onClick={() => setIsOpen(false)} // Fecha ao clicar no fundo
+                  />
+                )}
+
+                <DropdownBox
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                />
             </div>
-          </Button>
-
-          {/* Overlay para escurecer o fundo */}
-          {isOpen && (
-            <div
-              className="overlay"
-              onClick={() => setIsOpen(false)} // Fecha ao clicar no fundo
-            />
-          )}
-
-          <DropdownBox
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-        </div>
-      </div>
+    </div>
     </header>
   );
 };

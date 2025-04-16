@@ -1,4 +1,5 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react"; // ✅ Import necessário
 import Button from "../components/Button";
 import Chevron from "../components/Chevron";
 import useFetchPokemons from "../hooks/useFetchPokemons";
@@ -10,20 +11,38 @@ const PokemonDetailScreen = () => {
   const pokemonId = Number(number); // garante que vira número
 
   const location = useLocation();
-  const { selectedOption, pokemonList } = location.state || { selectedOption: "Number", pokemonList: [] };
+  const { selectedOption, pokemonList } = location.state || {
+    selectedOption: "Number",
+    pokemonList: [],
+  };
 
   const pokemons = useFetchPokemons([pokemonId]);
   const pokemon = pokemons[0]; // só vem 1, então pega direto
 
   const navigate = useNavigate();
 
+  // ✅ Estado para animar entrada/saída
+  const [animationClass, setAnimationClass] = useState("pokemon_detail_screen");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAnimationClass("pokemon_detail_screen fade-in");
+    }, 10); // pequeno delay pra garantir transição
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   const handleBack = () => {
-    navigate("/", {
-      state: {
-        selectedOption,
-        pokemonList,
-      },
-    });
+    setAnimationClass("pokemon_detail_screen fade-out");
+
+    setTimeout(() => {
+      navigate("/", {
+        state: {
+          selectedOption,
+          pokemonList,
+        },
+      });
+    }, 3); // espera o fade-out terminar
   };
 
   // Verifica a posição do Pokémon na lista
@@ -36,7 +55,8 @@ const PokemonDetailScreen = () => {
   const mainColor = mainType ? typeColors[mainType] : "#AAA";
 
   return (
-    <div className="pokemon_detail_screen" style={{ backgroundColor: mainColor }}>
+    <div className={animationClass} style={{ backgroundColor: mainColor }}>
+
       {/* -------------------------------------------------------------------------------------------------- */}
       <div className="img_pokeball_detail"><img src="/diversos/pokeball_detail.png" alt="pokeball" /></div>
       {/* -------------------------------------------------------------------------------------------------- */}
@@ -46,10 +66,14 @@ const PokemonDetailScreen = () => {
           <Button onClick={handleBack} className="div_arrow_back">
             <span className="material-symbols-rounded">arrow_back</span>
           </Button>
-          <h1>{pokemon ? pokemon.name : "Carregando..."}</h1>
+          <h1 key={pokemon?.name} className="animated_title">
+            {pokemon ? pokemon.name : "Carregando..."}
+          </h1>
         </div>
-        <span className="number_detail">#{number}</span>
-      </div>
+          <span key={number} className="number_detail animated_title"> #{number}
+</span>
+
+        </div>
 
       {/* -------------------------------------------------------------------------------------------------- */}
       <Chevron
@@ -64,7 +88,13 @@ const PokemonDetailScreen = () => {
       <div className="background_about">
         <div className="img_poke_detail">
           {pokemon?.image && (
-            <img src={pokemon.image} alt={pokemon.name} className="poke_image_detail" />
+            <img
+            key={pokemon.name}
+            src={pokemon.image}
+            alt={pokemon.name}
+            className="poke_image_detail animated_title"
+          />
+          
           )}
         </div>
 
