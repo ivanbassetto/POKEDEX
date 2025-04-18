@@ -34,7 +34,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
   };
 
   return (
-    <Button onClick={handleClick} className="pokemon_card">
+    <Button onClick={handleClick} className="pokemon_card animated_title">
       <div className="number_card">
         <span>#{number}</span>
       </div>

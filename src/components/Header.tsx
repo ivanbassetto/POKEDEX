@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
   setSearchTerm, // Desestruturar setSearchTerm
 }) => {
   return (
-    <header className="header">
+    <header className="header animated_title">
       <div className="partA_header">
         <img src="/diversos/Pokeball.png" alt="pokeball" />
         <h1>Pokédex</h1>

@@ -12,6 +12,9 @@ interface ChevronProps {
   currentIndex: number;
   pokemonList: Pokemon[];
   selectedOption: "Number" | "Name";
+  setIsImageExiting: (value: boolean) => void;
+  setIsBadgeExiting: (value: boolean) => void;
+  setIsAttributesExiting: (value: boolean) => void; // 👈 nova prop
 }
 
 const Chevron: React.FC<ChevronProps> = ({
@@ -20,18 +23,31 @@ const Chevron: React.FC<ChevronProps> = ({
   currentIndex,
   pokemonList,
   selectedOption,
+  setIsImageExiting,
+  setIsBadgeExiting,
+  setIsAttributesExiting, // 👈 recebe aqui
 }) => {
   const navigate = useNavigate();
 
   const goToPokemon = (index: number) => {
     const selected = pokemonList[index];
     if (selected) {
-      navigate(`/pokemon/${selected.number}`, {
-        state: {
-          selectedOption,
-          pokemonList,
-        },
-      });
+      // Ativa os efeitos de saída
+      setIsImageExiting(true);
+      setIsBadgeExiting(true);
+      setIsAttributesExiting(true); // 👈 ativa a saída do container de atributos também
+
+      // Aguarda antes de navegar
+      setTimeout(() => {
+        navigate(`/pokemon/${selected.number}`, {
+          state: {
+            selectedOption,
+            pokemonList,
+            transition: index > currentIndex ? "next" : "prev",
+            fromPokemon: pokemonList[currentIndex],
+          },
+        });
+      }, 100); // mesmo tempo do efeito CSS
     }
   };
 

@@ -2,27 +2,28 @@ import typeColors from "../utils/typeColors"; // Importa as cores dos tipos
 
 type Props = {
   type: string;
+  isMain?: boolean;
+  className?: string; // Novo: recebe animações por classe
 };
 
-const PokemonTypeBadge = ({ type }: Props) => {
+const PokemonTypeBadge = ({ type, isMain = false, className = "" }: Props) => {
   return (
     <span
+      className={`${isMain ? "badge_slide_in" : ""} ${className}`} // Aplica a animação
       style={{
         backgroundColor: typeColors[type] || "#aaa",
-        color: "#FFFFFF", // Cor do texto
-        paddingTop: "2px",
-        paddingRight: "8px",
-        paddingBottom: "2px",
-        paddingLeft: "8px",
+        color: "#FFFFFF",
+        padding: "2px 8px",
         borderRadius: "10px",
-        fontFamily: "Poppins", // Fonte do Figma
-        fontWeight: 700, // Peso da fonte
-        fontSize: "10px", // Tamanho da fonte
-        lineHeight: "16px", // Altura da linha
-        letterSpacing: "0px", // Espaçamento entre letras
-        verticalAlign: "middle", // Alinha verticalmente
+        fontFamily: "Poppins",
+        fontWeight: 700,
+        fontSize: "10px",
+        lineHeight: "16px",
+        letterSpacing: "0px",
+        verticalAlign: "middle",
         margin: "5px",
-        textTransform: "capitalize", // Primeira letra maiúscula
+        textTransform: "capitalize",
+        display: "inline-block",
       }}
     >
       {type}
