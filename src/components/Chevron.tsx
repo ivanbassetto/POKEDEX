@@ -12,9 +12,7 @@ interface ChevronProps {
   currentIndex: number;
   pokemonList: Pokemon[];
   selectedOption: "Number" | "Name";
-  setIsImageExiting: (value: boolean) => void;
-  setIsBadgeExiting: (value: boolean) => void;
-  setIsAttributesExiting: (value: boolean) => void; // 👈 nova prop
+  setIsExiting: (value: boolean) => void;
 }
 
 const Chevron: React.FC<ChevronProps> = ({
@@ -23,9 +21,7 @@ const Chevron: React.FC<ChevronProps> = ({
   currentIndex,
   pokemonList,
   selectedOption,
-  setIsImageExiting,
-  setIsBadgeExiting,
-  setIsAttributesExiting, // 👈 recebe aqui
+  setIsExiting,
 }) => {
   const navigate = useNavigate();
 
@@ -33,9 +29,7 @@ const Chevron: React.FC<ChevronProps> = ({
     const selected = pokemonList[index];
     if (selected) {
       // Ativa os efeitos de saída
-      setIsImageExiting(true);
-      setIsBadgeExiting(true);
-      setIsAttributesExiting(true); // 👈 ativa a saída do container de atributos também
+      setIsExiting(true);
 
       // Aguarda antes de navegar
       setTimeout(() => {

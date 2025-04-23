@@ -17,9 +17,7 @@ const PokemonDetailScreen = () => {
     transition: null,
   };
 
-  const [isImageExiting, setIsImageExiting] = useState(false);
-  const [isBadgeExiting, setIsBadgeExiting] = useState(false); // 👈 novo estado
-  const [isAttributesExiting, setIsAttributesExiting] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
 
 
   const pokemons = useFetchPokemons([pokemonId]);
@@ -27,9 +25,7 @@ const PokemonDetailScreen = () => {
 
   // Resetar os efeitos de saída quando o Pokémon muda
   useEffect(() => {
-    setIsImageExiting(false);
-    setIsBadgeExiting(false); // 👈 reset badge também
-    setIsAttributesExiting(false);
+    setIsExiting(false);
 
   }, [pokemon?.name]);
 
@@ -89,9 +85,7 @@ const PokemonDetailScreen = () => {
   currentIndex={currentIndex}
   pokemonList={pokemonList}
   selectedOption={selectedOption}
-  setIsImageExiting={setIsImageExiting}
-  setIsBadgeExiting={setIsBadgeExiting}
-  setIsAttributesExiting={setIsAttributesExiting} // 👈 aqui
+  setIsExiting={setIsExiting}
 />
 
 
@@ -106,7 +100,7 @@ const PokemonDetailScreen = () => {
       key={pokemon.name}
       src={pokemon.image}
       alt={pokemon.name}
-      className={`animated_title ${isImageExiting ? "exit_effect" : ""}`}
+      className={`animated_title ${isExiting ? "exit_effect" : ""}`}
     />
   )}
 </div>
@@ -122,7 +116,7 @@ const PokemonDetailScreen = () => {
 
         // Aplica o efeito apenas na primeira badge, se houver exatamente 2 badges
         if (pokemon.types.length === 2 && index === 0) {
-          if (isBadgeExiting) animateClass = "animate_to_center";
+          if (isExiting) animateClass = "animate_to_center";
           else if (isEntering) animateClass = "animate_from_center";
         }
 
@@ -152,7 +146,7 @@ const PokemonDetailScreen = () => {
               <div className="symbol_attribute">
                 <span className="material-symbols-rounded weight_attribute">weight</span>
               </div>
-              <span className={`text_header_attribute animated_title ${isAttributesExiting ? "exit_effect" : ""}`}>
+              <span className={`text_header_attribute animated_title ${isExiting ? "exit_effect" : ""}`}>
   {pokemon?.weight ? `${pokemon.weight / 10} kg` : "Carregando..."}
 </span>
 
@@ -167,7 +161,7 @@ const PokemonDetailScreen = () => {
               <div className="symbol_attribute">
                 <span className="material-symbols-rounded straighten_attribute">straighten</span>
               </div>
-              <span className={`text_header_attribute animated_title ${isAttributesExiting ? "exit_effect" : ""}`}>
+              <span className={`text_header_attribute animated_title ${isExiting ? "exit_effect" : ""}`}>
                 {pokemon?.height ? `${pokemon.height / 10} m` : "Carregando..."}
               </span>
             </div>
@@ -183,8 +177,7 @@ const PokemonDetailScreen = () => {
         key={`${pokemon.name}-abilities`} // 👈 força re-render
         className={`text_header_attribute3 animated_title ${
           pokemon.abilities.length === 1 ? "one-line" : ""
-        } ${isAttributesExiting ? "exit_effect" : ""}`}
-      >
+        } ${isExiting ? "exit_effect" : ""}`}>
         {pokemon.abilities.map((ability, index) => (
           <div key={index}>
             {ability
@@ -197,8 +190,7 @@ const PokemonDetailScreen = () => {
     ) : (
       <span
         key="loading-abilities" // 👈 também força re-render do "Carregando..."
-        className={`text_header_attribute3 animated_title ${isAttributesExiting ? "exit_effect" : ""}`}
-      >
+        className={`text_header_attribute3 animated_title ${isExiting ? "exit_effect" : ""}`}>
         Carregando...
       </span>
               )}
@@ -207,7 +199,9 @@ const PokemonDetailScreen = () => {
           </div>
         </div>
 
-        <h3 className="text_about">
+        <h3 
+        className={`text_about animated_title ${isExiting ? "exit_effect" : ""}`}
+        >
           {pokemon?.description ? pokemon.description : "Carregando descrição..."}
         </h3>
 
