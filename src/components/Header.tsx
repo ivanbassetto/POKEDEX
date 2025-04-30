@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
                 </div>
           </div>
 
-          <div className="dropdown-container">
+          <div className="dropdown_container">
             <Button className="circle" onClick={() => setIsOpen(!isOpen)}>
               <div className="back_sort_header">
                 <span className="material-symbols-rounded">

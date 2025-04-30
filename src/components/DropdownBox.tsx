@@ -13,24 +13,24 @@ const DropdownBox: React.FC<DropdownBoxProps> = ({ isOpen, selectedOption, setSe
   const options: ('Number' | 'Name')[] = ['Number', 'Name'];
 
   return (
-    <div className="dropdown-box">
-      <div className="dropdown-header">
-        <span className="dropdown-title">Sort by:</span>
+    <div className="dropdown_box">
+      <div className="dropdown_header">
+        <span className="dropdown_title">Sort by:</span>
       </div>
-      <div className="dropdown-options">
+      <div className="dropdown_options">
         {options.map((option) => (
           <div
             key={option}
-            className={`dropdown-option ${selectedOption === option ? 'selected' : ''}`}
+            className={`dropdown_option ${selectedOption === option ? 'selected' : ''}`}
             onClick={() => {
               setSelectedOption(option);
               setIsOpen(false); // Fecha a DropdownBox ao selecionar
             }}
           >
-            <div className="radio-button">
-              {selectedOption === option && <div className="selected-indicator" />}
+            <div className="radio_button">
+              {selectedOption === option && <div className="selected_indicator" />}
             </div>
-            <span className="option-text">{option}</span>
+            <span className="option_text">{option}</span>
           </div>
         ))}
       </div>

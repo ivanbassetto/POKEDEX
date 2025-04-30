@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import PokemonCard from "../components/PokemonCard";
-import Header from "../components/Header";
-import useFetchPokemons from "../hooks/useFetchPokemons";
+import PokemonCard from "../../components/PokemonCard";
+import Header from "../../components/Header";
+import useFetchPokemons from "../../hooks/useFetchPokemons";
+import styles from "./HomeScreen.module.css";
 
 const pokemonIds = [1, 4, 7, 304, 25, 12, 132, 92, 151];
 
@@ -42,7 +43,7 @@ const HomeScreen: React.FC = () => {
   });
 
   return (
-    <div className="home_screen">
+    <div className={styles.home_screen}>
       <Header
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -51,7 +52,7 @@ const HomeScreen: React.FC = () => {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <div className="pokemon_container">
+      <div className={styles.pokemon_container}>
         {sortedPokemons.map((pokemon) => (
           <PokemonCard
             key={pokemon.number}
