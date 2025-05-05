@@ -1,0 +1,54 @@
+
+
+
+.background_about {
+    position: relative; /* necessário pra que os filhos com position:absolute funcionem */
+    background-color: var(--background_general);
+    width: 352px;
+    height: 415px;
+    padding: 56px 20px 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px 1px #00000040 inset;
+    box-sizing: border-box;
+    margin: auto;
+    overflow: visible; /* garante que a imagem possa “sair” da div */
+  }
+
+  .img_poke_detail {
+    position: absolute;
+    top: -140px; /* sobe a imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .img_poke_detail img {
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(0px 1px 3px #00000033);
+  }
+
+  .badge_about {
+    width: 312px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+  }
+
+  .badge_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os badges horizontalmente */
+    gap: 8px; /* Espaço entre os badges */
+  }
+
+  .text_about {
+    width: 312px;
+    height: 60px;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: justify;
+    color: var(--color_text1);
+  }

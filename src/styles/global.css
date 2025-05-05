@@ -414,31 +414,7 @@ margin: 0; /* Remove qualquer margem adicional */
   
 
 
-  @keyframes fadeInSlide {
-    from {
-      opacity: 0.5;;
-    }
-    to {
-      opacity: 1;
-    }
-  }
   
-  .animated_title {
-    animation: fadeInSlide 0.3s ease-in-out;
-  }
-  
-  @keyframes growOut {
-    from {
-      opacity: 1;;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-  
-  .exit_effect {
-    animation: growOut 0.3s ease-in-out forwards;
-  }
 
 
   
@@ -488,6 +464,46 @@ margin: 0; /* Remove qualquer margem adicional */
 
 
 
+/* KEY FADE */
+
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0.5;;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+  
+  @keyframes growOut {
+    from {
+      opacity: 1;;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .animated_title {
+    animation: fadeInSlide 0.3s ease-in-out;
+  }
+  
+  .exit_effect {
+    animation: growOut 0.3s ease-in-out forwards;
+  }
+
+
+
+
+
+
+
+/* KEY BADGES  */
+
+
+
 @keyframes fromCenter {
   from {
     transform: translateX(20px);
@@ -529,256 +545,3 @@ margin: 0; /* Remove qualquer margem adicional */
 
 
 
-.background_about {
-  position: relative; /* necessário pra que os filhos com position:absolute funcionem */
-  background-color: var(--background_general);
-  width: 352px;
-  height: 415px;
-  padding: 56px 20px 20px 20px;
-  border-radius: 8px;
-  box-shadow: 0px 1px 3px 1px #00000040 inset;
-  box-sizing: border-box;
-  margin: auto;
-  overflow: visible; /* garante que a imagem possa “sair” da div */
-}
-
-.img_poke_detail {
-  position: absolute;
-  top: -140px; /* sobe a imagem */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.img_poke_detail img {
-  width: 200px;
-  height: 200px;
-  filter: drop-shadow(0px 1px 3px #00000033);
-}
-
-
-.badge_about {
-  width: 312px;
-  margin: 0 auto; /* Centraliza o bloco na tela */
-}
-
-.badge_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centraliza os badges horizontalmente */
-  gap: 8px; /* Espaço entre os badges */
-}
-
-.h2_about {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: center;
-  vertical-align: middle;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.attribute_about {
-  width: 312px;
-  height: 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-
-  /* Impede expansão */
-  max-width: 312px;
-  min-width: 312px;
-  max-height: 48px;
-  min-height: 48px;
-
-  overflow: hidden; /* esconde conteúdo que tentar ultrapassar */
-}
-
-
-.div_attribute {
-  /* border: 1px solid black; */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4px;
-}
-
-
-.div_attribute h3 {
-  margin-top: auto;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-size: 8px;
-  line-height: 12px;
-  text-align: center;
-  color: var(--color_text2);
-}
-
-
-
-.header1_div_attribute, .header2_div_attribute {
-  width: 103.33px;
-  height: 32px;
-  gap: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  box-sizing: border-box;
-  display: flex;               /* coloca o conteúdo em linha */
-  align-items: center;         /* centraliza verticalmente */
-  justify-content: center;     /* centraliza horizontalmente */
-}
-
-
-.symbol_attribute {
-  color: var(--color_text1);
-  margin-bottom: 4px;
-  width: 16px;
-  height: 16px;
-}
-
-.weight_attribute {
-  
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.straighten_attribute {
-  
-  font-size: 16px;
-  transform: rotate(90deg);
-  margin: auto;
-  font-weight: 300;
-}
-
-.text_header_attribute {
-  color: var(--color_text1);
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: justify;
-  vertical-align: middle;
-}
-
-.text_header_attribute3 {
-  color: var(--color_text1);
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  vertical-align: middle;
-}
-
-.text_header_attribute3.one-line {
-  min-height: 32px; /* ou o valor que alinhe visualmente com as outras colunas */
-  display: flex;
-  align-items: center;
-}
-
-
-
-.divider_attribute {
-  width: 1px;
-height: 48px;
-background-color: #E0E0E0;
-}
-
-
-.text_about {
-  width: 312px;
-  height: 60px;
-  display: flex;
-  align-items: center; /* Centraliza verticalmente */
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  text-align: justify;
-  color: var(--color_text1);
-}
-
-
-
-
-.basestats_about {
-  display: flex;
-  flex-direction: column;
-  height: 96px;
-  justify-content: space-between;
-  gap: 0px;
-}
-
-.stat_row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 16px;
-}
-
-.label_basestats {
-  width: 31px;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 16px;
-  text-align: right;
-}
-
-.divider_basestats {
-  width: 1px;
-  height: 16px;
-  background-color: #E0E0E0;
-}
-
-.value_basestats {
-  color: var(--color_text1);
-  width: 23px;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 16px;
-  text-align: left;
-}
-
-.stat_bar {
-  position: relative;
-  width: 233px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.stat_bar::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: var(--main-color);
-  opacity: 0.2;
-  border-radius: px;
-}
-
-.stat_bar_fill {
-  position: relative;
-  z-index: 1;
-  height: 4px;
-  background-color: var(--main-color);
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  transition: width 0.3s ease-in-out;
-}

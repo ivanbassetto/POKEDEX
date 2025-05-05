@@ -6,7 +6,7 @@ import Chevron from "../../components/Chevron";
 import useFetchPokemons from "../../hooks/useFetchPokemons";
 import typeColors from "../../utils/typeColors";
 import styles from "./PokemonDetailScreen.module.css";
-import AboutDetailScreen from "../../components/AboutDetailScreen";
+import CardDetailScreen from "../../components/card_det_screen/CardDetailScreen";
 
 const PokemonDetailScreen = () => {
   const { number } = useParams();
@@ -84,7 +84,7 @@ const PokemonDetailScreen = () => {
       />
 
       {/* Detalhes do Pokémon */}
-      <AboutDetailScreen pokemon={pokemon} isExiting={isExiting} isEntering={isEntering} />
+      <CardDetailScreen pokemon={pokemon} isExiting={isExiting} isEntering={isEntering} />
     </div>
   );
 };

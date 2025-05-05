@@ -1,0 +1,110 @@
+
+
+
+.h2_about {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    }
+
+    .attribute_about {
+        width: 312px;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        /* Impede expansão */
+        max-width: 312px;
+        min-width: 312px;
+        max-height: 48px;
+        min-height: 48px;
+      
+        overflow: hidden; /* esconde conteúdo que tentar ultrapassar */
+      }
+
+      .div_attribute {
+        /* border: 1px solid black; */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+      }
+      
+      
+      .div_attribute h3 {
+        margin-top: auto;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 12px;
+        text-align: center;
+        color: var(--color_text2);
+      }
+
+      .header_div_attribute {
+        width: 103.33px;
+        height: 32px;
+        gap: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        box-sizing: border-box;
+        display: flex;               /* coloca o conteúdo em linha */
+        align-items: center;         /* centraliza verticalmente */
+        justify-content: center;     /* centraliza horizontalmente */
+      }
+
+      .symbol_attribute {
+        color: var(--color_text1);
+        margin-bottom: 4px;
+        width: 16px;
+        height: 16px;
+      }
+
+      .weight_attribute {
+        font-size: 16px;
+        font-weight: 300;
+      }
+      
+      .straighten_attribute {
+        font-size: 16px;
+        transform: rotate(90deg);
+        margin: auto;
+        font-weight: 300;
+      }
+
+      .text_header_attribute {
+        color: var(--color_text1);
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        text-align: justify;
+        vertical-align: middle;
+      }
+
+      .text_header_attribute3 {
+        color: var(--color_text1);
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+      }
+      
+      .text_header_attribute3.one-line {
+        min-height: 32px; /* ou o valor que alinhe visualmente com as outras colunas */
+        display: flex;
+        align-items: center;
+      }
+
+      .divider_attribute {
+        width: 1px;
+      height: 48px;
+      background-color: #E0E0E0;
+      }
+      
