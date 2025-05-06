@@ -1,0 +1,42 @@
+.chevron_detail {
+    position: relative;
+    width: 352px;
+    height: 144px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  
+  /* Ícones absolutos nos cantos inferiores */
+  .chevron_detail button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+  
+    position: absolute;
+    bottom: 16px;
+    font-size: 24px;
+    color: white;
+    font-weight: 200;
+    filter: drop-shadow(0px 1px 3px #00000033);
+    width: 6.5px;
+    height: 11.42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+   
+  /* Posicionamento lateral */
+  .chevron_left_detail {
+    left: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .chevron_right_detail {
+    right: 30px;
+    margin-bottom: 10px;
+  }

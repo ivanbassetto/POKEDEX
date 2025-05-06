@@ -28,16 +28,16 @@
     filter: drop-shadow(0px 1px 3px #00000033);
   }
 
-  .badge_about {
+  .chips_about {
     width: 312px;
     margin: 0 auto; /* Centraliza o bloco na tela */
   }
 
-  .badge_wrapper {
+  .chips_wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os badges horizontalmente */
-    gap: 8px; /* Espaço entre os badges */
+    justify-content: center; 
+    gap: 8px; 
   }
 
   .text_about {

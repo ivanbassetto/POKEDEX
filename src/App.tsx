@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/home_screen/HomeScreen";
-import PokemonDetailScreen from "./screens/poke_det_screen/PokemonDetailScreen";
+import PokemonDetailScreen from "./screens/detail_screen/DetailScreen";
 
 function App() {
   return (

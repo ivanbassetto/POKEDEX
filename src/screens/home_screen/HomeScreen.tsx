@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import PokemonCard from "../../components/PokemonCard";
-import Header from "../../components/Header";
+import PokemonCard from "../../components/poke_list/PokeList";
+import Header from "../../components/header/Header";
 import useFetchPokemons from "../../hooks/useFetchPokemons";
 import styles from "./HomeScreen.module.css";
 

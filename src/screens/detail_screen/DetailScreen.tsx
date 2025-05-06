@@ -2,11 +2,11 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "../../components/Button";
-import Chevron from "../../components/Chevron";
+import Chevron from "../../components/chevron/Chevron";
 import useFetchPokemons from "../../hooks/useFetchPokemons";
 import typeColors from "../../utils/typeColors";
-import styles from "./PokemonDetailScreen.module.css";
-import CardDetailScreen from "../../components/card_det_screen/CardDetailScreen";
+import styles from "./DetailScreen.module.css";
+import CardDetailScreen from "../../components/card_detail/CardDetail";
 
 const PokemonDetailScreen = () => {
   const { number } = useParams();

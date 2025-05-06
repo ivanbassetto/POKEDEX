@@ -1,9 +1,9 @@
 // src/components/AboutDetailScreen.tsx
-import PokemonTypeBadge from "../PokemonTypeBadge";
-import AboutDetailScreen from "./AboutDetailScreen";
-import BaseStatsDetailScreen from "./BaseStatsDetailScreen";
+import TypeChips from "../TypeChips";
+import AboutDetailScreen from "./About";
+import BaseStatsDetailScreen from "./BaseStats";
 import typeColors from "../../utils/typeColors";
-import styles from "./CardDetailScreen.module.css";
+import styles from "./CardDetail.module.css";
 
 const CardDetailScreen = ({ pokemon, isExiting, isEntering }: any) => {
   const mainColor = pokemon?.types?.[0] ? typeColors[pokemon.types[0]] : "#AAA";
@@ -21,8 +21,8 @@ const CardDetailScreen = ({ pokemon, isExiting, isEntering }: any) => {
         )}
       </div>
 
-      <div className={styles.badge_about}>
-        <div className={styles.badge_wrapper}>
+      <div className={styles.chips_about}>
+        <div className={styles.chips_wrapper}>
           {pokemon?.types?.length > 0 ? (
             pokemon.types.map((type: string, index: number) => {
               let animateClass = "";
@@ -33,7 +33,7 @@ const CardDetailScreen = ({ pokemon, isExiting, isEntering }: any) => {
               }
 
               return (
-                <PokemonTypeBadge
+                <TypeChips
                   key={type}
                   type={type}
                   className={`animated_title ${animateClass}`}
@@ -41,7 +41,7 @@ const CardDetailScreen = ({ pokemon, isExiting, isEntering }: any) => {
               );
             })
           ) : (
-            <span className="text_loading_badges">Carregando tipos...</span>
+            <span className="loading_chips">Carregando tipos...</span>
           )}
         </div>
       </div>

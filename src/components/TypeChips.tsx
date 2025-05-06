@@ -2,14 +2,13 @@ import typeColors from "../utils/typeColors"; // Importa as cores dos tipos
 
 type Props = {
   type: string;
-  isMain?: boolean;
-  className?: string; // Novo: recebe animações por classe
+  className?: string; // Recebe animações por classe, se necessário
 };
 
-const PokemonTypeBadge = ({ type, isMain = false, className = "" }: Props) => {
+const TypeChips = ({ type, className = "" }: Props) => {
   return (
     <span
-      className={`${isMain ? "badge_slide_in" : ""} ${className}`} // Aplica a animação
+      className={className}
       style={{
         backgroundColor: typeColors[type] || "#aaa",
         color: "#FFFFFF",
@@ -31,4 +30,4 @@ const PokemonTypeBadge = ({ type, isMain = false, className = "" }: Props) => {
   );
 };
 
-export default PokemonTypeBadge;
+export default TypeChips;

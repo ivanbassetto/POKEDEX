@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../Button";
+import styles from "./PokeList.module.css";
 
 interface Pokemon {
   number: string;
@@ -15,7 +16,7 @@ interface PokemonCardProps {
   pokemonList: Pokemon[];
 }
 
-const PokemonCard: React.FC<PokemonCardProps> = ({
+const PokeList: React.FC<PokemonCardProps> = ({
   name,
   image,
   number,
@@ -34,16 +35,16 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
   };
 
   return (
-    <Button onClick={handleClick} className="pokemon_card animated_title">
-      <div className="number_card">
+    <Button onClick={handleClick} className={`${styles.poke_list} animated_title`}>
+      <div className={styles.number_list}>
         <span>#{number}</span>
       </div>
       <img src={image} alt={name} />
-      <div className="pokemon_card_footer">
+      <div className={styles.footer_list}>
         <h3>{name}</h3>
       </div>
     </Button>
   );
 };
 
-export default PokemonCard;
+export default PokeList;

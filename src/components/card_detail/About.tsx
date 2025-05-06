@@ -1,6 +1,6 @@
 // src/components/AboutDetailScreen.tsx
 
-import styles from "./AboutDetailScreen.module.css";
+import styles from "./About.module.css";
 
 const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
     return (

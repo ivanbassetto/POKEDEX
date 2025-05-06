@@ -1,0 +1,90 @@
+
+
+.dropdown_box {
+    z-index: 3;
+    width: 113px;
+    height: 132px;
+    position: absolute;
+    top: 125%; /* Ajuste conforme necessário */
+    right: 0;
+    border-radius: 12px;
+    padding: 4px;
+    background: var(--color_prin);
+    box-shadow: 0px 3px 12px 3px #00000033;
+    display: none; /* Para esconder por padrão */ 
+  }
+  
+  .dropdown_box {
+    display: block; /* Apenas quando a lógica do React ativa */
+  }
+
+  .dropdown_header {
+    height: 48px;
+    padding-top: 13px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+
+  .dropdown_title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: white;
+    }
+
+    .dropdown_options {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1px;
+      height: 83px;
+      border-radius: 8px;
+      padding-top: 16px;
+      padding-right: 20px;
+      padding-bottom: 16px;
+      padding-left: 20px;
+      gap: 16px;
+      box-sizing: border-box;
+      background: var(--background_general);
+      box-shadow: 0px 1px 3px 1px #00000040 inset;
+      }
+
+      .radio_option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 8px; /* Espaçamento entre o seletor de rádio e o texto */
+        transition: all 0.3s ease-in; /* Transição suave para a mudança de estado */
+      }
+
+      .radio_button {
+        width: 13.53px;
+        height: 13.53px;
+        border-radius: 50%; /* Forma redonda */
+        border: 2px solid var(--color_prin); /* Borda branca */
+        position: relative; /* Para posicionar o indicador de seleção dentro */
+        display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .selected_indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--color_prin); 
+        position: absolute;
+      }
+      
+      /* Texto das opções (Number e Name) */
+      .option_text {
+        font-weight: 400;
+        font-size: 10px;
+        margin-top: 1px;
+        line-height: 16px;
+        letter-spacing: px;
+        color: var(--color_text1);
+      }

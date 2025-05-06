@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Button from "./Button";
+import Button from "../Button";
+import styles from "./Chevron.module.css";
 
 interface Pokemon {
   number: string;
@@ -44,11 +45,11 @@ const Chevron: React.FC<ChevronProps> = ({
   };
 
   return (
-    <div className="chevron_detail">
+    <div className={styles.chevron_detail}>
       {!isFirst && (
         <Button
           type="button"
-          className="material-symbols-rounded chevron_left_detail"
+          className={`material-symbols-rounded ${styles.chevron_left_detail}`}
           onClick={() => goToPokemon(currentIndex - 1)}
           aria-label="Pokémon anterior"
         >
@@ -58,7 +59,7 @@ const Chevron: React.FC<ChevronProps> = ({
       {!isLast && (
         <Button
           type="button"
-          className="material-symbols-rounded chevron_right_detail"
+          className={`material-symbols-rounded ${styles.chevron_right_detail}`}
           onClick={() => goToPokemon(currentIndex + 1)}
           aria-label="Próximo Pokémon"
         >

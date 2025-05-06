@@ -1,5 +1,6 @@
-import Button from "./Button";
-import DropdownBox from "./DropdownBox";
+import Button from "../Button";
+import DropdownBox from "../dropdownbox/DropdownBox";
+import styles from "./Header.module.css";
 
 interface HeaderProps {
   isOpen: boolean;
@@ -19,15 +20,15 @@ const Header: React.FC<HeaderProps> = ({
   setSearchTerm, // Desestruturar setSearchTerm
 }) => {
   return (
-    <header className="header animated_title">
-      <div className="partA_header">
+    <header className={`${styles.header} animated_title`}>
+      <div className={styles.partA_header}>
         <img src="/diversos/Pokeball.png" alt="pokeball" />
         <h1>Pokédex</h1>
       </div>
 
-    <div className="partB_header">
-          <div className="input_container">
-                <span className="material-symbols-rounded search_icon">search</span>
+    <div className={styles.partB_header}>
+          <div className={styles.input_container}>
+                <span className={`material-symbols-rounded ${styles.search_icon}`}>search</span>
                     <input
                       type="text"
                       placeholder="Search"
@@ -35,16 +36,16 @@ const Header: React.FC<HeaderProps> = ({
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />
                 <div
-                  className={`input_close ${searchTerm ? 'active' : ''}`}
+                  className={`${styles.input_close} ${searchTerm ? styles.input_active : ''}`}
                   onClick={() => setSearchTerm('')}
                 >
-                  <span className="material-symbols-rounded close_icon">close</span>
+                  <span className={`material-symbols-rounded ${styles.close_icon}`}>close</span>
                 </div>
           </div>
 
-          <div className="dropdown_container">
-            <Button className="circle" onClick={() => setIsOpen(!isOpen)}>
-              <div className="back_sort_header">
+          <div className={styles.dropdown_container}>
+            <Button className={styles.circle_dropdown} onClick={() => setIsOpen(!isOpen)}>
+              <div className={styles.symbol_circle}>
                 <span className="material-symbols-rounded">
                   {selectedOption === "Number" ? "numbers" : "text_format"}
                 </span>
@@ -54,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({
             {/* Overlay para escurecer o fundo */}
             {isOpen && (
               <div
-                    className="overlay"
+                    className={styles.overlay_dropdown}
                     onClick={() => setIsOpen(false)} // Fecha ao clicar no fundo
                   />
                 )}

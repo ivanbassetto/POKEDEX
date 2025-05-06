@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "./DropdownBox.module.css";
 
 interface DropdownBoxProps {
   isOpen: boolean;
@@ -13,24 +14,24 @@ const DropdownBox: React.FC<DropdownBoxProps> = ({ isOpen, selectedOption, setSe
   const options: ('Number' | 'Name')[] = ['Number', 'Name'];
 
   return (
-    <div className="dropdown_box">
-      <div className="dropdown_header">
-        <span className="dropdown_title">Sort by:</span>
+    <div className={styles.dropdown_box}>
+      <div className={styles.dropdown_header}>
+        <span className={styles.dropdown_title}>Sort by:</span>
       </div>
-      <div className="dropdown_options">
+      <div className={styles.dropdown_options}>
         {options.map((option) => (
           <div
             key={option}
-            className={`dropdown_option ${selectedOption === option ? 'selected' : ''}`}
+            className={`${styles.radio_option} ${selectedOption === option ? 'selected' : ''}`}
             onClick={() => {
               setSelectedOption(option);
               setIsOpen(false); // Fecha a DropdownBox ao selecionar
             }}
           >
-            <div className="radio_button">
-              {selectedOption === option && <div className="selected_indicator" />}
+            <div className={styles.radio_button}>
+              {selectedOption === option && <div className={styles.selected_indicator} />}
             </div>
-            <span className="option_text">{option}</span>
+            <span className={styles.option_text}>{option}</span>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BaseStatsDetailScreen.module.css";
+import styles from "./BaseStats.module.css";
 
 const BaseStatsDetailScreen = ({ pokemon, isExiting, mainColor }: {
   pokemon: any;
