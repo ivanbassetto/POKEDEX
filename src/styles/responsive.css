@@ -1,7 +1,8 @@
+
+
 @media screen and (min-width: 1440px) {
   .zoom_container {
     transform: scale(1.2);
-    transform-origin: center;
   }
 
   body {
@@ -11,8 +12,11 @@
 
 @media screen and (orientation: portrait) {
   .wrapper {
-    margin-top: -60px;
+    background-color: blueviolet;
+    transform: scale(1.1);
   }
 }
+
+
 
 
