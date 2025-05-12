@@ -1,0 +1,70 @@
+
+
+
+/* KEY FADE */
+
+@keyframes fadeInSlide {
+    from {
+      opacity: 0.5;;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+  
+  @keyframes growOut {
+    from {
+      opacity: 1;;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .animated_title {
+    animation: fadeInSlide 0.3s ease-in-out;
+  }
+  
+  .exit_effect {
+    animation: growOut 0.3s ease-in-out forwards;
+  }
+
+
+
+
+
+
+
+/* KEY CHIPS  */
+
+@keyframes fromCenter {
+  from {
+    transform: translateX(20px);
+ 
+  }
+  to {
+    transform: translateX(0);
+
+  }
+}
+
+@keyframes toCenter {
+  from {
+    transform: translateX(0);
+
+  }
+  to {
+    transform: translateX(100px);
+
+  }
+}
+
+.animate_from_center {
+  animation: fromCenter 0.4s ease-out forwards;
+}
+
+.animate_to_center {
+  animation: toCenter 0.4s ease-in forwards;
+}

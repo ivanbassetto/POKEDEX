@@ -1,8 +1,13 @@
 
+
+
 @charset "UTF-8";
 
+@import './responsive.css';
 @import './variables.css'; 
+@import './keyframes.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 
 
   body {
@@ -14,90 +19,26 @@
   body, input, textarea, button, select {
     font-family: var(--font-prin);
   }
-  
+
+
   /* INDEX */
-  .wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 2rem; */
-    box-sizing: border-box;
-  }
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden; /* impede que o conteúdo estourado do zoom gere scroll */
+}
+
+
+
   
 
  
 
 
-/* KEY FADE */
 
-  @keyframes fadeInSlide {
-    from {
-      opacity: 0.5;;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
- 
-  
-  @keyframes growOut {
-    from {
-      opacity: 1;;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-
-  .animated_title {
-    animation: fadeInSlide 0.3s ease-in-out;
-  }
-  
-  .exit_effect {
-    animation: growOut 0.3s ease-in-out forwards;
-  }
-
-
-
-
-
-
-
-/* KEY BADGES  */
-
-
-
-@keyframes fromCenter {
-  from {
-    transform: translateX(20px);
- 
-  }
-  to {
-    transform: translateX(0);
-
-  }
-}
-
-@keyframes toCenter {
-  from {
-    transform: translateX(0);
-
-  }
-  to {
-    transform: translateX(100px);
-
-  }
-}
-
-.animate_from_center {
-  animation: fromCenter 0.4s ease-out forwards;
-}
-
-.animate_to_center {
-  animation: toCenter 0.4s ease-in forwards;
-}
 
 
 
