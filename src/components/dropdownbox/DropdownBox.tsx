@@ -1,9 +1,8 @@
-import React from 'react';
 import styles from "./DropdownBox.module.css";
 
 interface DropdownBoxProps {
   isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>; // Adicionando o setIsOpen aqui
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>; 
   selectedOption: 'Number' | 'Name';
   setSelectedOption: React.Dispatch<React.SetStateAction<'Number' | 'Name'>>;
 }
@@ -25,7 +24,7 @@ const DropdownBox: React.FC<DropdownBoxProps> = ({ isOpen, selectedOption, setSe
             className={`${styles.radio_option} ${selectedOption === option ? 'selected' : ''}`}
             onClick={() => {
               setSelectedOption(option);
-              setIsOpen(false); // Fecha a DropdownBox ao selecionar
+              setIsOpen(false); // Close DropdownBox when selecting
             }}
           >
             <div className={styles.radio_button}>

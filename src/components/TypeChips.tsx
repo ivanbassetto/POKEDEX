@@ -1,8 +1,8 @@
-import typeColors from "../utils/typeColors"; // Importa as cores dos tipos
+import typeColors from "../utils/typeColors"; 
 
 type Props = {
   type: string;
-  className?: string; // Recebe animações por classe, se necessário
+  className?: string; 
 };
 
 const TypeChips = ({ type, className = "" }: Props) => {

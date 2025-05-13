@@ -8,7 +8,7 @@ interface HeaderProps {
   selectedOption: "Number" | "Name";
   setSelectedOption: React.Dispatch<React.SetStateAction<"Number" | "Name">>;
   searchTerm: string; // Receber searchTerm
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>; // Receber setSearchTerm
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>; 
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -16,8 +16,8 @@ const Header: React.FC<HeaderProps> = ({
   setIsOpen,
   selectedOption,
   setSelectedOption,
-  searchTerm, // Desestruturar searchTerm
-  setSearchTerm, // Desestruturar setSearchTerm
+  searchTerm, 
+  setSearchTerm, 
 }) => {
   return (
     <header className={`${styles.header} animated_title`}>
@@ -52,11 +52,11 @@ const Header: React.FC<HeaderProps> = ({
               </div>
             </Button>
 
-            {/* Overlay para escurecer o fundo */}
+            {/* Overlay */}
             {isOpen && (
               <div
                     className={styles.overlay_dropdown}
-                    onClick={() => setIsOpen(false)} // Fecha ao clicar no fundo
+                    onClick={() => setIsOpen(false)} // Closes when clicking on the bottom
                   />
                 )}
 

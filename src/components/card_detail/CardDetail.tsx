@@ -1,9 +1,12 @@
-// src/components/AboutDetailScreen.tsx
+
 import TypeChips from "../TypeChips";
 import AboutDetailScreen from "./About";
 import BaseStatsDetailScreen from "./BaseStats";
+
 import typeColors from "../../utils/typeColors";
+
 import styles from "./CardDetail.module.css";
+
 
 const CardDetailScreen = ({ pokemon, isExiting, isEntering }: any) => {
   const mainColor = pokemon?.types?.[0] ? typeColors[pokemon.types[0]] : "#AAA";

@@ -35,12 +35,12 @@ const useFetchPokemons = (pokemonIds: number[]) => {
           const data = await pokemonRes.json();
           const speciesData = await speciesRes.json();
 
-          // Pegando a primeira descrição em inglês
+          // description in English
           const englishEntry = speciesData.flavor_text_entries.find(
             (entry: any) => entry.language.name === "en"
           );
 
-          // Pegando as estatísticas base
+          // statistics
           const stats = data.stats.reduce((acc: any, stat: any) => {
             switch (stat.stat.name) {
               case "hp":

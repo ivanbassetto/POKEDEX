@@ -13,7 +13,6 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: var(--background_interface);
   }
 
   body, input, textarea, button, select {
@@ -26,7 +25,6 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   box-sizing: border-box;
   overflow: hidden; /* impede que o conteúdo estourado do zoom gere scroll */
 }

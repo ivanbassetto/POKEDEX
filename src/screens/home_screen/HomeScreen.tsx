@@ -1,9 +1,14 @@
+
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import PokemonCard from "../../components/poke_list/PokeList";
-import Header from "../../components/header/Header";
+
 import useFetchPokemons from "../../hooks/useFetchPokemons";
+
+import Header from "../../components/header/Header";
+import PokemonCard from "../../components/poke_list/PokeList";
+
 import styles from "./HomeScreen.module.css";
+
 
 const pokemonIds = [1, 4, 7, 304, 25, 12, 132, 92, 151];
 
@@ -18,12 +23,12 @@ const HomeScreen: React.FC = () => {
 
   const pokemons = useFetchPokemons(pokemonIds);
 
-  // Atualiza o state da rota ao trocar o selectedOption
+  // Updates route state when changing selectedOption
   useEffect(() => {
     navigate("/", { state: { selectedOption }, replace: true });
   }, [selectedOption, navigate]);
 
-  // Filtro por nome, número com # ou número sem #
+  // Filter by name, number with # or number without #
   const filteredPokemons = pokemons.filter((pokemon) => {
     const search = searchTerm.toLowerCase();
     const nameMatch = pokemon.name.toLowerCase().startsWith(search);
@@ -33,7 +38,7 @@ const HomeScreen: React.FC = () => {
     return nameMatch || numberWithHash.startsWith(search) || numberWithoutHash.startsWith(search);
   });
 
-  // Ordenação por número ou nome
+  // Sort by number or name
   const sortedPokemons = [...filteredPokemons].sort((a, b) => {
     if (selectedOption === "Number") {
       return parseInt(a.number) - parseInt(b.number);

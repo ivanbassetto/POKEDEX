@@ -1,4 +1,4 @@
-// src/components/AboutDetailScreen.tsx
+
 
 import styles from "./About.module.css";
 

@@ -1,12 +1,20 @@
-// src/screens/poke_det_screen/PokemonDetailScreen.tsx
+
+
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Button from "../../components/Button";
-import Chevron from "../../components/chevron/Chevron";
+
+
 import useFetchPokemons from "../../hooks/useFetchPokemons";
 import typeColors from "../../utils/typeColors";
-import styles from "./DetailScreen.module.css";
+
+
+import Button from "../../components/Button";
+import Chevron from "../../components/chevron/Chevron";
 import CardDetailScreen from "../../components/card_detail/CardDetail";
+
+
+import styles from "./DetailScreen.module.css";
+
 
 const PokemonDetailScreen = () => {
   const { number } = useParams();
@@ -53,12 +61,12 @@ const PokemonDetailScreen = () => {
 
   return (
     <div className={styles.pokemon_detail_screen} style={{ backgroundColor: mainColor }}>
-      {/* Pokébola de fundo */}
+      {/* pokeball background */}
       <div className={styles.img_pokeball_detail}>
         <img src="/diversos/pokeball_detail.png" alt="pokeball" />
       </div>
 
-      {/* Cabeçalho */}
+      {/* header */}
       <div className={styles.header_detail}>
         <div className={styles.left_group_detail}>
           <Button onClick={handleBack} className={styles.div_arrow_back}>
@@ -73,7 +81,7 @@ const PokemonDetailScreen = () => {
         </span>
       </div>
 
-      {/* Navegação entre Pokémons */}
+      {/* navigation */}
       <Chevron
         isFirst={isFirst}
         isLast={isLast}
@@ -83,7 +91,7 @@ const PokemonDetailScreen = () => {
         setIsExiting={setIsExiting}
       />
 
-      {/* Detalhes do Pokémon */}
+      {/* details */}
       <CardDetailScreen pokemon={pokemon} isExiting={isExiting} isEntering={isEntering} />
     </div>
   );
