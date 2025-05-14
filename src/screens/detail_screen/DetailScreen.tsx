@@ -63,7 +63,7 @@ const PokemonDetailScreen = () => {
     <div className={styles.pokemon_detail_screen} style={{ backgroundColor: mainColor }}>
       {/* pokeball background */}
       <div className={styles.img_pokeball_detail}>
-        <img src="/diversos/pokeball_detail.png" alt="pokeball" />
+        <img src={`${import.meta.env.BASE_URL}diversos/pokeball_detail.png`} alt="pokeball" />
       </div>
 
       {/* header */}

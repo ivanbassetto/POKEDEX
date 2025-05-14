@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className={`${styles.header} animated_title`}>
       <div className={styles.partA_header}>
-        <img src="/diversos/Pokeball.png" alt="pokeball" />
+        <img src={`${import.meta.env.BASE_URL}diversos/pokeball.png`} alt="pokeball" />
         <h1>Pokédex</h1>
       </div>
 
