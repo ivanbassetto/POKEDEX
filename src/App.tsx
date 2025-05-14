@@ -4,7 +4,7 @@ import PokemonDetailScreen from "./screens/detail_screen/DetailScreen";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/POKEDEX/">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/pokemon/:number" element={<PokemonDetailScreen />} />
