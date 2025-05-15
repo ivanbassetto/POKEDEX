@@ -5,17 +5,17 @@
     width: 113px;
     height: 132px;
     position: absolute;
-    top: 125%; /* Ajuste conforme necessário */
+    top: 125%; 
     right: 0;
     border-radius: 12px;
     padding: 4px;
     background: var(--color_prin);
     box-shadow: 0px 3px 12px 3px #00000033;
-    display: none; /* Para esconder por padrão */ 
+    display: none; 
   }
   
   .dropdown_box {
-    display: block; /* Apenas quando a lógica do React ativa */
+    display: block; 
   }
 
   .dropdown_header {
@@ -56,16 +56,16 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        gap: 8px; /* Espaçamento entre o seletor de rádio e o texto */
-        transition: all 0.3s ease-in; /* Transição suave para a mudança de estado */
+        gap: 8px; 
+        transition: all 0.3s ease-in; 
       }
 
       .radio_button {
         width: 13.53px;
         height: 13.53px;
-        border-radius: 50%; /* Forma redonda */
-        border: 2px solid var(--color_prin); /* Borda branca */
-        position: relative; /* Para posicionar o indicador de seleção dentro */
+        border-radius: 50%; 
+        border: 2px solid var(--color_prin); 
+        position: relative; 
         display: flex;
           align-items: center;
           justify-content: center;
@@ -79,7 +79,6 @@
         position: absolute;
       }
       
-      /* Texto das opções (Number e Name) */
       .option_text {
         font-weight: 400;
         font-size: 10px;

@@ -6,16 +6,16 @@
     height: 640px;
     margin: auto;
     padding: 4px;
-    position: relative; /* necessário para posicionar elementos absolutos dentro */
-    overflow: hidden; /* Para esconder o conteúdo que ultrapassa os limites */
+    position: relative; 
+    overflow: hidden; 
   }
 
   .img_pokeball_detail {
     position: absolute;
     padding: 5px;
     right: 0;
-    opacity: 0.1; /* transparência */
-    z-index: 0; /* fica atrás do conteúdo principal */
+    opacity: 0.1; 
+    z-index: 0; 
   }
   
   .img_pokeball_detail img {
@@ -47,7 +47,7 @@ padding-left: 20px;
   .left_group_detail {
     display: flex;
     align-items: center;
-    gap: 8px; /* espaço entre ícone e título */
+    gap: 8px; 
   }
 
   .div_arrow_back {
@@ -57,10 +57,10 @@ padding-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none; /* sem cor */
+    background: none;
     border: none;
     outline: none;
-    box-shadow: none; /* garante que a div não tenha sombra */
+    box-shadow: none; 
   }
   
   .div_arrow_back span {

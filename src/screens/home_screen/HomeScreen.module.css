@@ -5,7 +5,7 @@
     background-color: var(--color_prin);
       width: 360px;
       height: 640px;
-      margin: auto; /* Centraliza na tela */
+      margin: auto; 
       padding: 4px;
       display: flex;
       flex-direction: column;
@@ -19,9 +19,9 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-auto-rows: 108px; /* Mantém as fileiras alinhadas */
+    grid-auto-rows: 108px; 
     gap: 8px;
-    justify-items: center; /* Centraliza os cards horizontalmente dentro das células */
+    justify-items: center; 
     border-radius: 8px;
     padding-top: 24px;
     padding-right: 12px;

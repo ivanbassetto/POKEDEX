@@ -1,26 +1,26 @@
 
 
 .header {
-    width: 100%; /* FILL → Ocupará toda a largura disponível do contêiner pai */
-    height: auto; /* HUG → Ajusta conforme o conteúdo */
-    min-height: 108px; /* Define um tamanho mínimo baseado no Figma */
+    width: 100%;
+    height: auto; 
+    min-height: 108px; 
     box-sizing: border-box;
-    display: flex; /* Para organizar os elementos internos */
-    flex-direction: column; /* Coloca os filhos um abaixo do outro */
-    gap: 8px; /* Espaçamento entre os elementos internos */
-    padding: 12px 12px 24px 12px; /* padding-top right bottom left */
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+    padding: 12px 12px 24px 12px; 
   }
 
   .partA_header,
   .partB_header {
-    width: 100%; /* Ocupar toda a largura do contêiner pai */
-    max-width: 328px; /* Garante que não passe de 328px */
-    height: auto; /* Ajusta conforme o conteúdo */
-    max-height: 32px; /* Define um tamanho máximo baseado no Figma */
-    display: flex; /* Mantém os elementos na mesma linha */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 16px; /* Espaçamento entre os elementos */
-    /* Centraliza as divs pai dentro do contêiner */
+    width: 100%; 
+    max-width: 328px;
+    height: auto; 
+    max-height: 32px;
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    
     margin-left: auto;
     margin-right: auto;
   }
@@ -55,7 +55,7 @@ vertical-align: middle;
     height: auto;
     max-height: 32px;
     gap: 8px;
-    padding: 8px 32px 8px 32px; /* Espaço para o ícone da lupa */
+    padding: 8px 32px 8px 32px; 
     border-radius: 16px;
     background: white; 
     box-shadow: inset 0px 1px 3px 1px #00000040;
@@ -129,14 +129,14 @@ vertical-align: middle;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-sizing: border-box; /* Faz o padding não aumentar o tamanho total */
+    box-sizing: border-box; 
 animation-timing-function: ease-in;
 animation-duration: 300ms;
 }
 
 .symbol_circle {
-    width: 16px; /* Ajuste a largura para um tamanho adequado */
-    height: 16px; /* Ajuste a altura para um tamanho adequado */
+    width: 16px; 
+    height: 16px; 
   }
   
   .symbol_circle span {
@@ -152,6 +152,6 @@ animation-duration: 300ms;
     left: 0;
     width: 100vw;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Máscara preta com opacidade */
-    z-index: 2; /* Certifica que está acima do conteúdo */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 2; 
   }

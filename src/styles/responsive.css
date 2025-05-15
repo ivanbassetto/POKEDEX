@@ -1,6 +1,6 @@
 @media screen and (max-width: 1439px) {
   .zoom_container {
-    transform: scale(0.93); /* ou 0.98, ajusta como preferir */
+    transform: scale(0.93); 
     transform-origin: top;
     margin-top: 3px;
     
@@ -8,7 +8,6 @@
 
   body {
     background-color: rgb(255, 209, 6);
-    /* mantém overflow padrão (não coloca hidden) */
   }
 }
 

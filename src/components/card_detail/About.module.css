@@ -16,17 +16,17 @@
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        /* Impede expansão */
+       
         max-width: 312px;
         min-width: 312px;
         max-height: 48px;
         min-height: 48px;
       
-        overflow: hidden; /* esconde conteúdo que tentar ultrapassar */
+        overflow: hidden;
       }
 
       .div_attribute {
-        /* border: 1px solid black; */
+       
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -53,9 +53,9 @@
         padding-top: 8px;
         padding-bottom: 8px;
         box-sizing: border-box;
-        display: flex;               /* coloca o conteúdo em linha */
-        align-items: center;         /* centraliza verticalmente */
-        justify-content: center;     /* centraliza horizontalmente */
+        display: flex;              
+        align-items: center;         
+        justify-content: center;     
       }
 
       .symbol_attribute {
@@ -97,7 +97,7 @@
       }
       
       .text_header_attribute3.one-line {
-        min-height: 32px; /* ou o valor que alinhe visualmente com as outras colunas */
+        min-height: 32px; 
         display: flex;
         align-items: center;
       }

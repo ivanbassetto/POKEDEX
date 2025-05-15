@@ -1,12 +1,12 @@
 
 :root {
     /* COLORS */
-    --background_interface: #000000; /* Fundo preto da interface */
-    --background_general: white; /* Fundo branco dos cards */
+    --background_interface: #000000; 
+    --background_general: white; 
     --background_footer_card: #EFEFEF;
-    --color_prin: #dc0a2d; /* Identidade (vermelho do cabeçalho) */
-    --color_text1: #1D1D1D; /* Texto escuro */
-    --color_text2: #666666; /* Texto claro */
+    --color_prin: #dc0a2d; 
+    --color_text1: #1D1D1D; 
+    --color_text2: #666666; 
 
     /* FONTS */
     --font-prin: 'Poppins', sans-serif; ;

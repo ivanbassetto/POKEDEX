@@ -6,7 +6,7 @@
     box-sizing: border-box;
   }
   
-  /* Ícones absolutos nos cantos inferiores */
+ 
   .chevron_detail button {
     background: none;
     border: none;
@@ -29,8 +29,7 @@
     cursor: pointer;
   }
 
-   
-  /* Posicionamento lateral */
+  
   .chevron_left_detail {
     left: 30px;
     margin-bottom: 10px;
