@@ -1,8 +1,7 @@
 @media screen and (max-width: 1439px) {
   .zoom_container {
-    transform: scale(0.93); 
-    transform-origin: top;
-    margin-top: 3px;
+    display: flex;
+  align-items: center;
     
   }
 
@@ -15,7 +14,7 @@
 
 @media screen and (min-width: 1440px) {
   .zoom_container {
-  transform: scale(1.2);
+  zoom: 1.2;
   display: flex;
   align-items: center;
   }
@@ -29,7 +28,6 @@
 @media screen and (orientation: portrait) {
   .zoom_container {
     margin-top: 40px;
-    transform: scale(1);
     margin-right: 5px;
   }
 
