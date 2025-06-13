@@ -1,9 +1,9 @@
 
-import TypeChips from "../TypeChips";
-import AboutDetailScreen from "./About";
-import BaseStatsDetailScreen from "./BaseStats";
+import TypeChips from "../../chips/TypeChips";
+import AboutDetailScreen from "../about/About";
+import BaseStatsDetailScreen from "../basestats/BaseStats";
 
-import typeColors from "../../utils/typeColors";
+import typeColors from "../../../utils/typeColors";
 
 import styles from "./CardDetail.module.css";
 

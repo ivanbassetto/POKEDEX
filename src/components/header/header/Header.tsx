@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../../button/Button";
 import DropdownBox from "../dropdownbox/DropdownBox";
 import styles from "./Header.module.css";
 
@@ -7,7 +7,7 @@ interface HeaderProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   selectedOption: "Number" | "Name";
   setSelectedOption: React.Dispatch<React.SetStateAction<"Number" | "Name">>;
-  searchTerm: string; // Receber searchTerm
+  searchTerm: string; 
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>; 
 }
 
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
             {isOpen && (
               <div
                     className={styles.overlay_dropdown}
-                    onClick={() => setIsOpen(false)} // Closes when clicking on the bottom
+                    onClick={() => setIsOpen(false)} // Fecha ao clicar fora
                   />
                 )}
 

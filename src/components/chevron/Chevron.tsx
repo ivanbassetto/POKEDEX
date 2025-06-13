@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../Button";
+import Button from "../button/Button";
 import styles from "./Chevron.module.css";
 
 interface Pokemon {

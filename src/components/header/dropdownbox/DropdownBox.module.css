@@ -11,12 +11,9 @@
     padding: 4px;
     background: var(--color_prin);
     box-shadow: 0px 3px 12px 3px #00000033;
-    display: none; 
   }
   
-  .dropdown_box {
-    display: block; 
-  }
+
 
   .dropdown_header {
     height: 48px;

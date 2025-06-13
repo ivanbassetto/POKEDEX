@@ -1,27 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../Button";
+import Button from "../button/Button";
+import { Pokemon } from "../../types/pokemon";
 import styles from "./PokemonCard.module.css";
 
-interface Pokemon {
-  number: string;
-  name: string;
-  image: string;
-}
-// define como é cada pokemon individual.
+
 
 interface PokemonCardProps {
-  pokemon: Pokemon; // objeto que representa um Pokémon, com número, nome e imagem
+  pokemon: Pokemon; 
   selectedOption: 'Number' | 'Name';
   pokemonList: Pokemon[];
 }
 // define o que o componente PokemonCard precisa receber como props.
 // Serve só pro TypeScript.
 // Ela diz: "essas são as props que esse componente vai receber, e esses são os tipos de cada uma".
-// A interface não tem valor em tempo de execução. Ela só garante que, no desenvolvimento, se você passar algo errado, o TypeScript reclama.
+
 
 const PokemonCard: React.FC<PokemonCardProps> = ({
   // onde você de fato recebe e usa essas props no componente
-  pokemon, // <- aqui recebe o objeto pokemon
+  pokemon, 
   selectedOption,
   pokemonList,
 }) => {
@@ -36,6 +32,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
       },
     });
   };
+  // A função handleClick redireciona para uma tela de detalhes do Pokémon (/pokemon/:number) e leva junto o estado atual (como o filtro e a lista de pokémons) pra essa nova tela.
 
   return (
     <Button onClick={handleClick} className={`${styles.poke_list} animated_title`}>

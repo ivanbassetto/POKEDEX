@@ -150,8 +150,26 @@ animation-duration: 300ms;
     position: fixed;
     top: 0;
     left: 0;
+    margin-left: -700px;
     width: 100vw;
-    height: 100%;
+    height: 100vw;
     background: rgba(0, 0, 0, 0.5); 
     z-index: 2; 
   }
+
+
+/* TESTE DE MEDIAQUERIES EM MODULE */
+ 
+  @media screen and (max-width: 1439px) {
+  .overlay_dropdown {
+    margin-left: -500px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+   .overlay_dropdown {
+    margin-left: -10px;
+    height: 100%;
+  }
+  
+}

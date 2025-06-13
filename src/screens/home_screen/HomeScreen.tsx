@@ -8,10 +8,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 //só funcionam se o componente onde eles estão sendo usados estiver dentro de um <Router>, em main ou App
 
 import useFetchPokemons from "../../hooks/useFetchPokemons";
-// hook personalizado que busca dados de Pokémon
+// hook personalizado que busca dados de Pokemon
 
-import Header from "../../components/header/Header";
-import PokemonCard from "../../components/poke_list/PokemonCard";
+import Header from "../../components/header/header/Header";
+import PokemonCard from "../../components/poke_card/PokemonCard";
 
 import styles from "./HomeScreen.module.css";
 
@@ -44,7 +44,7 @@ const HomeScreen: React.FC = () => {
  // Envia para a raiz (/) sempre que Number ou Name são selecionados,
   useEffect(() => {
     navigate("/", { state: { selectedOption }, replace: true });
-    // chama a função navigate (do React Router), mandando pra / e passando selectedOption como dado interno de navegação (via state, não como query param).
+    // chama a função navigate (do React Router), mandando pra raiz (/) e passando selectedOption como dado interno de navegação (via state, não como query param).
     // replace: true faz com que essa navegação substitua a entrada atual no histórico do navegador (ou seja, não cria uma nova "página" no botão voltar).
   }, [selectedOption, navigate]);
   // vai rodar sempre que selectedOption mudar.
@@ -92,7 +92,7 @@ const HomeScreen: React.FC = () => {
           <PokemonCard
           // importando o componente PokemonCard, que recebe as props necessárias para exibir cada Pokémon.
             key={pokemon.number} // React precisa disso pra performance e organização interna
-            pokemon={pokemon} // passa o objeto inteiro (nome, número, imagem) do Pokémon
+            pokemon={pokemon} // passa o objeto inteiro do Pokémon
             selectedOption={selectedOption}
             pokemonList={sortedPokemons}
             // passando as props necessárias para o PokemonCard
@@ -112,3 +112,9 @@ export default HomeScreen;
 // Sempre passe o key no componente dentro do .map()
 // Passe os dados necessários via props normalmente, mesmo que o key seja o mesmo valor
 
+
+// RESUMINDO:
+// Estado (useState) fica no componente pai.
+// Dados e funções são passados pros filhos via props.
+// Filhos usam as props pra exibir ou interagir com o que o pai controla.
+// Isso é chamado de "state lifting": o estado mora no componente mais acima que precisa controlá-lo, e os filhos só usam via props.

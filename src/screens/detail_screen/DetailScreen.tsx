@@ -8,9 +8,9 @@ import useFetchPokemons from "../../hooks/useFetchPokemons";
 import typeColors from "../../utils/typeColors";
 
 
-import Button from "../../components/Button";
+import Button from "../../components/button/Button";
 import Chevron from "../../components/chevron/Chevron";
-import CardDetailScreen from "../../components/card_detail/CardDetail";
+import CardDetailScreen from "../../components/card_detail/card_detail/CardDetail";
 
 
 import styles from "./DetailScreen.module.css";

@@ -1,4 +1,4 @@
-import typeColors from "../utils/typeColors"; 
+import typeColors from "../../utils/typeColors"; 
 
 type Props = {
   type: string;
