@@ -10,6 +10,8 @@ interface HeaderProps {
   searchTerm: string; 
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>; 
 }
+// React.Dispatch é um tipo que representa uma função que pode ser usada para atualizar o estado.
+// No pokemoncard foi feito somente a leitura 
 
 const Header: React.FC<HeaderProps> = ({
   isOpen,
@@ -53,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({
             </Button>
 
             {/* Overlay */}
-            {isOpen && (
+            {isOpen && ( 
               <div
                     className={styles.overlay_dropdown}
                     onClick={() => setIsOpen(false)} // Fecha ao clicar fora
@@ -73,3 +75,16 @@ const Header: React.FC<HeaderProps> = ({
 };
 
 export default Header;
+
+
+// O React Context serve pra evitar o repasse de props em cadeia (prop drilling).
+
+// Em vez de mandar props de HomeScreen → Header → DropdownBox, cria um "portal global" onde qualquer componente acessa ou altera o estado, sem precisar que ele venha por props.
+
+// EX:
+// 1. Crie o contexto (em DropdownContext.tsx)
+// 2. Envolva sua app com esse provider
+// 3. Use o contexto em qualquer componente
+// Resultado:
+// Agora o DropdownBox não precisa receber nenhuma prop. Ele acessa e altera os dados direto do contexto.
+

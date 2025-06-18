@@ -2,8 +2,12 @@
 
 import styles from "./About.module.css";
 
-const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
+const AboutDetail = ({ pokemon, isExiting, mainColor }: any) => {
     return (
+// Props 
+// pokemon: objeto com os dados do pokémon
+// isExiting: se está saindo da tela, usado pra aplicar animações
+// mainColor: cor principal baseada no tipo 
       <>
         <h2 className={styles.h2_about} style={{ color: mainColor }}>About</h2>
   
@@ -15,6 +19,8 @@ const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
               </div>
               <span className={`${styles.text_header_attribute} animated_title ${isExiting ? "exit_effect" : ""}`}>
                 {pokemon?.weight ? `${pokemon.weight / 10} kg` : "Carregando..."}
+                {/* Exibe o peso do pokémon (dividido por 10 pra converter de hectogramas pra kg)
+                Se não tiver carregado ainda, mostra "Carregando..." */}
               </span>
             </div>
             <h3>Weight</h3>
@@ -29,6 +35,7 @@ const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
               </div>
               <span className={`${styles.text_header_attribute} animated_title ${isExiting ? "exit_effect" : ""}`}>
                 {pokemon?.height ? `${pokemon.height / 10} m` : "Carregando..."}
+                {/* Mesma lógica do peso */}
               </span>
             </div>
             <h3>Height</h3>
@@ -42,12 +49,13 @@ const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
                 <div
                   key={`${pokemon.name}-abilities`}
                   className={`${styles.text_header_attribute3} animated_title ${pokemon.abilities.length === 1 ? "one-line" : ""} ${isExiting ? "exit_effect" : ""}`}
+                  // Aplica classe one-line se tiver só 1 habilidade
                 >
-                  {pokemon?.abilities?.map((ability: string, index: number) => (
+                  {pokemon?.abilities?.map((ability: string, index: number) => ( // Itera com .map() e exibe cada uma dentro de uma <div>
                     <div key={index}>
                       {ability
                         .split("-")
-                        .map((part: string) => part.charAt(0).toUpperCase() + part.slice(1))
+                        .map((part: string) => part.charAt(0).toUpperCase() + part.slice(1)) // primeira letra maiúscula de cada parte
                         .join("-")}
                     </div>
                   ))}
@@ -65,5 +73,5 @@ const AboutDetailScreen = ({ pokemon, isExiting, mainColor }: any) => {
     );
   };
   
-  export default AboutDetailScreen;
+  export default AboutDetail;
   
